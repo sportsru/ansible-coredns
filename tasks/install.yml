@@ -31,7 +31,7 @@
     - name: Download coredns binary to local folder
       become: false
       get_url:
-        url: "https://github.com/coredns/coredns/releases/download/v{{ coredns_version }}/coredns_{{ coredns_version }}_linux_{{ go_arch }}.tgz"
+        url: "{{ coredns_archive_url }}"
         dest: "/tmp/coredns_{{ coredns_version }}_linux_{{ go_arch }}.tgz"
         checksum: "sha256:{{ coredns_checksum }}"
       register: _download_binary

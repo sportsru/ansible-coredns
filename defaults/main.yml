@@ -1,6 +1,7 @@
 ---
-coredns_version: 1.8.3
+coredns_version: 1.10.2
 coredns_dns_port: 53
+coredns_archive_url: "https://github.com/sportsru/coredns/releases/download/{{ coredns_version }}/coredns_{{ coredns_version }}_linux_{{ go_arch }}.tgz"
 
 # Config file name, searched in ansible templates path.
 coredns_config_file: ""

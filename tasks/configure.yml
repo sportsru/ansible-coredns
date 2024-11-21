@@ -16,6 +16,7 @@
     group: "{{ coredns_system_group }}"
     mode: 0400
   with_fileglob: "{{ coredns_key_files_paths }}"
+  notify: restart coredns
 
 - name: Copy zone files
   template:
@@ -25,3 +26,4 @@
     group: root
     mode: 0644
   with_fileglob: "{{ coredns_zone_files_paths }}"
+  notify: restart coredns
